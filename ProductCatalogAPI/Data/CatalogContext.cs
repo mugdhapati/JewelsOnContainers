@@ -9,6 +9,10 @@ namespace ProductCatalogAPI.Data
 {
     public class CatalogContext : DbContext                 //my classs inherit from DBContext(Database Context used by EntityFrameworkCore)
     {
+        public CatalogContext(DbContextOptions options) : base(options)
+        {
+
+        }
         public DbSet<CatalogType> CatalogTypes { get; set; }               //DbSet - is a db table //make a table with name CatalogTypes
         public DbSet<CatalogBrand> CatalogBrands { get; set; }              //make a table with name CatalogBrands
         public DbSet<CatalogItem> CatalogItems { get; set; }                 //make a table with name CatalogItems

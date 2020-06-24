@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductCatalogAPI.Data
 {
-    public class CatalogSeed
+    public static class CatalogSeed
     {
         public static void Seed(CatalogContext catalogContext)
         {
@@ -26,15 +26,18 @@ namespace ProductCatalogAPI.Data
             {
                 catalogContext.CatalogItems.AddRange(GetCatalogItems());
                 catalogContext.SaveChanges();
+
             }
+
         }
+
         private static IEnumerable<CatalogBrand> GetCatalogBrands()
         {
             return new List<CatalogBrand>
             {
                 new CatalogBrand
                 {
-                    Brand = "Tiffiny & Co."
+                    Brand = "Tiffany & Co."
                 },
                 new CatalogBrand
                 {
@@ -43,28 +46,31 @@ namespace ProductCatalogAPI.Data
                 new CatalogBrand
                 {
                     Brand = "Graff"
-                },
+                }
             };
+
         }
+
         private static IEnumerable<CatalogType> GetCatalogTypes()
         {
             return new List<CatalogType>
             {
                 new CatalogType
                 {
-                    Type= "Engagement Ring"
+                    Type = "Engagement Ring"
                 },
                 new CatalogType
                 {
-                   Type = "Wedding Ring"
+                    Type = "Wedding Ring"
                 },
                 new CatalogType
                 {
                     Type = "Fashion Ring"
-                },
+                }
             };
 
         }
+
         private static IEnumerable<CatalogItem> GetCatalogItems()
         {
             return new List<CatalogItem>()
